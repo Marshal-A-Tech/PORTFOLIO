@@ -62,19 +62,25 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    position: relative; /* Create a positioning context for the border */
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(235, 217, 217);
     text-decoration: none;
     display: flex;
     align-items: center;
     transition: color 0.3s;
+    padding: 10px 15px; /* Add padding for better spacing */
+    border: 2px solid whitesmoke; /* Set initial border to transparent */
+    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
 nav ul li a:hover {
-    color: #00aced; /* Change color on hover */
+    color: #ffb300; 
+    border-color: #dc9600; 
 }
+
 
 /* Hero Section */
 .hero {
@@ -317,6 +323,7 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
+
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .project-card, .skill-card {
@@ -331,6 +338,8 @@ nav ul li a:hover {
     nav {
         flex-direction: row; /* Horizontal layout for mobile view */
         justify-content: space-between; /* Space between logo and nav items */
+        align-items: center; /* Center items vertically */
+        flex-wrap: wrap; /* Allow wrapping of items */
     }
 
     nav ul {
@@ -338,19 +347,27 @@ nav ul li a:hover {
         justify-content: center; /* Center the items */
         padding: 0;
         margin: 0;
+        display: flex; /* Ensure ul is a flex container */
+        flex-wrap: wrap; /* Allow items to wrap */
     }
 
     nav ul li {
         margin: 0 5px; /* Further reduce spacing between nav items */
     }
 
+    nav ul li a {
+        font-size: 13px; /* Smaller font size for nav links */
+        padding: 5px 10px; /* Reduced padding for smaller buttons */
+    }
+
     .logo {
-        height: 50px; /* Maintain adjusted logo size */
+        height: 40px; /* Smaller logo size for mobile */
         margin-left: 5px; /* Adjust margin for logo */
         margin-right: auto; /* Allow automatic margin adjustment */
     }
 }
 
+/* Styles for larger screens */
 @media screen and (min-width: 769px) {
     .project-card, .skill-card {
         width: calc(30% - 40px); /* 3 cards per row on larger screens */
@@ -364,7 +381,13 @@ nav ul li a:hover {
         margin: 0 15px;
     }
 
+    nav ul li a {
+        font-size: 16px; /* Larger font size for nav links */
+        padding: 10px 15px; /* Normal padding for larger buttons */
+    }
+
     .logo {
-        height: 60px;
+        height: 60px; /* Original logo size for desktop */
     }
 }
+
